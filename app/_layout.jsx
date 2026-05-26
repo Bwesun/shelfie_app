@@ -11,11 +11,12 @@ const RootLayout = () => {
                 headerTintColor: '#F4F7FF',
                 headerTitleStyle: {fontWeight: '700'},
                 contentStyle: {backgroundColor: '#071228'},
+                headerShown: false, // Hide header for all screens, can be overridden in individual screens if needed
             }
         }> {/* Navigation component that will render all changes and navigation.... Set Globally for all screens */}
-            <Stack.Screen name="index" options={{title: 'Shelfie'}} />
+            {/* <Stack.Screen name="index" options={{title: 'Shelfie'}} />
             <Stack.Screen name="about" options={{title: 'About Shelfie'}} />
-            <Stack.Screen name="contact" options={{title: 'Contact Us'}} />
+            <Stack.Screen name="contact" options={{title: 'Contact Us'}} /> */}
              {/* Define all screens here */}
              <Slot /> {/* Renders the current page based on navigation */}
         </Stack>

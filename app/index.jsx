@@ -16,7 +16,7 @@ const Home = () => {
         <View style={styles.heroHeader}>
           <Image source={Logo} style={styles.logo} />
           <View>
-            <Text style={styles.brand}>Censono Tech Ltd</Text>
+            <Text style={styles.brand}>Censono Shelfie</Text>
             <Text style={styles.brandSub}>Modern inventory, smarter shelves.</Text>
           </View>
         </View>
