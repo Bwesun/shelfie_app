@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, useColorScheme, View } from 'react-native'
 import React from 'react'
 import { Slot, Stack } from 'expo-router'
 
 const RootLayout = () => {
+    const colorScheme = useColorScheme();
+    console.log('Current color scheme:', colorScheme); // Debugging line to check the color scheme value
   return (
     <View style={{flex: 1}}>
         <Stack screenOptions={
@@ -18,7 +20,6 @@ const RootLayout = () => {
             <Stack.Screen name="about" options={{title: 'About Shelfie'}} />
             <Stack.Screen name="contact" options={{title: 'Contact Us'}} /> */}
              {/* Define all screens here */}
-             <Slot /> {/* Renders the current page based on navigation */}
         </Stack>
         {/* <Slot /> renders the current page */}
       {/* <Text>Footer</Text> */}
