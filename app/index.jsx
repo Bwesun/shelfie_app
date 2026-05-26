@@ -3,10 +3,12 @@ import React from 'react'
 import Logo from '../assets/images/censono-logo.png'
 import { Link } from 'expo-router'
 
+// Themed imports
+import ThemedView from '../components/ThemedView'
+
 const Home = () => {
   return (
-    <ScrollView style={styles.page} contentContainerStyle={styles.pageContent}>
-      <StatusBar barStyle="light-content" backgroundColor="#071228" />
+    <ThemedView style={styles.page} contentContainerStyle={styles.pageContent}>
 
       <View style={styles.heroPanel}>
         <View style={styles.heroBadge}>
@@ -16,7 +18,7 @@ const Home = () => {
         <View style={styles.heroHeader}>
           <Image source={Logo} style={styles.logo} />
           <View>
-            <Text style={styles.brand}>Censono Shelfie</Text>
+            <Text style={styles.brand}>Censono Tech Shelfie</Text>
             <Text style={styles.brandSub}>Modern inventory, smarter shelves.</Text>
           </View>
         </View>
@@ -57,7 +59,7 @@ const Home = () => {
       <View style={styles.footerNote}>
         <Text style={styles.footerText}>Your inventory story starts here — with clarity, speed, and style.</Text>
       </View>
-    </ScrollView>
+    </ThemedView>
   )
 }
 

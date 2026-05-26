@@ -1,24 +1,28 @@
 import { StyleSheet, Text, useColorScheme, View } from 'react-native'
 import React from 'react'
 import { Slot, Stack } from 'expo-router'
+import { Colors } from '../constants/Colors' // Import the Colors object
+import {StatusBar} from 'expo-status-bar'
 
 const RootLayout = () => {
     const colorScheme = useColorScheme();
-    console.log('Current color scheme:', colorScheme); // Debugging line to check the color scheme value
+
+    const theme = Colors[colorScheme] ?? Colors.light; // Fallback to light theme if colorScheme is undefined
   return (
     <View style={{flex: 1}}>
+        <StatusBar value="auto" />
         <Stack screenOptions={
             {
-                headerStyle: {backgroundColor: '#0B1835'},
-                headerTintColor: '#F4F7FF',
-                headerTitleStyle: {fontWeight: '700'},
-                contentStyle: {backgroundColor: '#071228'},
-                headerShown: false, // Hide header for all screens, can be overridden in individual screens if needed
+                headerStyle: {backgroundColor: theme.navBackground},
+                headerTintColor: theme.textPrimary,
+                headerTitleStyle: {fontWeight: 'semibold', fontSize: 18, color: theme.title},
+                contentStyle: {backgroundColor: theme.background},
+                // headerShown: false, // Hide header for all screens, can be overridden in individual screens if needed
             }
         }> {/* Navigation component that will render all changes and navigation.... Set Globally for all screens */}
-            {/* <Stack.Screen name="index" options={{title: 'Shelfie'}} />
+            <Stack.Screen name="index" options={{title: 'Shelfie'}} />
             <Stack.Screen name="about" options={{title: 'About Shelfie'}} />
-            <Stack.Screen name="contact" options={{title: 'Contact Us'}} /> */}
+            <Stack.Screen name="contact" options={{title: 'Contact Us'}} />
              {/* Define all screens here */}
         </Stack>
         {/* <Slot /> renders the current page */}
