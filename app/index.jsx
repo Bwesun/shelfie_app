@@ -5,6 +5,8 @@ import { Link } from 'expo-router'
 
 // Themed imports
 import ThemedView from '../components/ThemedView'
+import ThemedLogo from '../components/ThemedLogo'
+import Spacer from '../components/Spacer'
 
 const Home = () => {
   return (
@@ -16,7 +18,8 @@ const Home = () => {
         </View>
 
         <View style={styles.heroHeader}>
-          <Image source={Logo} style={styles.logo} />
+          <ThemedLogo style={styles.logo} />
+          <Spacer />
           <View>
             <Text style={styles.brand}>Censono Tech Shelfie</Text>
             <Text style={styles.brandSub}>Modern inventory, smarter shelves.</Text>
