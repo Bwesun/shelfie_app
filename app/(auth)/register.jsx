@@ -1,5 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Keyboard, Pressable, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
+import { useState } from 'react'
 
 // Themed Components
 import ThemedView from "../../components/ThemedView";
@@ -10,13 +10,17 @@ import Spacer from "../../components/Spacer";
 import { Link } from 'expo-router';
 import { Colors } from '../../constants/Colors';
 import ThemedButton from '../../components/ThemedButton';
+import ThemedTextInput from '../../components/ThemedTextInput';
 
 const Register = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleSubmit = () => {
-        console.log('Register Form Submitted!')
+        console.log('Register Form Submitted!', email, password)
     }
   return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <ThemedView style={styles.container}>
       
       <Spacer />
@@ -25,6 +29,22 @@ const Register = () => {
             Register for your Android
         </ThemedText>
       </View>
+
+      <ThemedTextInput 
+              style={{width: '80%', marginBottom: 30}}
+              placeholder='Email' 
+              keyboardType="email-address"
+              onChangeText={setEmail}
+              value={email}
+            />
+      
+            <ThemedTextInput 
+              style={{width: '80%', marginBottom: 30}}
+              placeholder='Password'
+              onChangeText={setPassword}
+              value={password}
+              secureTextEntry
+            />
 
       <ThemedButton onPress={handleSubmit}>
         <Text style={{ color: '#f2f2f2' }}>Register</Text>
@@ -43,6 +63,7 @@ const Register = () => {
         </ThemedText>
       </Link>
     </ThemedView>
+    </TouchableWithoutFeedback>
   )
 }
 
