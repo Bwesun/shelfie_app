@@ -20,9 +20,9 @@ const RootLayout = () => {
                 // headerShown: false, // Hide header for all screens, can be overridden in individual screens if needed
             }
         }> {/* Navigation component that will render all changes and navigation.... Set Globally for all screens */}
+            <Stack.Screen name="(auth)" options={{headerShown: false}} /> For Nested routes in folder
+            <Stack.Screen name="(dashboard)" options={{headerShown: false}} /> {/* For Nested routes in folder*/}
             <Stack.Screen name="index" options={{title: 'Shelfie'}} />
-            <Stack.Screen name="about" options={{title: 'About Shelfie'}} />
-            <Stack.Screen name="contact" options={{title: 'Contact Us'}} />
              {/* Define all screens here */}
         </Stack>
         {/* <Slot /> renders the current page */}

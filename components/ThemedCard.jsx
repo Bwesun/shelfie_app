@@ -1,4 +1,4 @@
-import { useColorScheme, View } from 'react-native'
+import { useColorScheme, View, StyleSheet } from 'react-native'
 import { Colors } from '../constants/Colors';
 
 const ThemedCard = ({ style, ...props }) => {
@@ -8,7 +8,7 @@ const ThemedCard = ({ style, ...props }) => {
   return (
     <View style={[
         {backgroundColor: theme.background},
-        style
+        style, styles.card
     ]}
     {...props}
      />
@@ -20,6 +20,6 @@ export default ThemedCard
 const styles = StyleSheet.create({
     card: {
         borderRadius: 5,
-        padding: 12
+        padding: 20,
     }
 })

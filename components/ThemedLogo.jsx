@@ -6,13 +6,14 @@ import LightLogo from '../assets/images/censono-logo.png'
 
 
 
+
 const ThemedLogo = ({ ...props }) => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.light; 
   const logo = colorScheme === 'dark' ? DarkLogo : LightLogo; 
 
   return (
-    <Image source={logo} {...props}
+    <Image source={logo} {...props} style={styles.logo}
      />
   )
 }
@@ -20,8 +21,10 @@ const ThemedLogo = ({ ...props }) => {
 export default ThemedLogo
 
 const styles = StyleSheet.create({
-    card: {
-        borderRadius: 5,
-        padding: 12
+    logo: {
+    width: 50,
+    height: 50,
+    borderRadius: 16,
+    marginRight: 14,
     }
 })

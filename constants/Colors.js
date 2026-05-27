@@ -12,7 +12,7 @@ export const Colors = {
     text: "#374151", // softer gray for body text
     title: "#1E3A8A", // rich navy for headings
     iconColor: "#2563EB", // vibrant blue accent
-    iconColorFocused: "#FFFFFF", // crisp white when active
+    iconColorFocused: "#2563EB", // vibrant blue accent
     uiBackground: "#F3F4F6", // light neutral for panels/cards
   },
 
@@ -23,7 +23,7 @@ export const Colors = {
     text: "#CBD5E1", // muted gray-blue for secondary text
     title: "#93C5FD", // soft sky blue for headings
     iconColor: "#3B82F6", // bright blue accent
-    iconColorFocused: "#0F172A", // blends into background when active
+    iconColorFocused: "#3B82F6", // blends into background when active
     uiBackground: "#1E293B", // consistent with nav for cohesion
   },
 };
