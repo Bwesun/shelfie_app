@@ -1,4 +1,4 @@
-import { Keyboard, Pressable, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native'
+import { ActivityIndicator, Keyboard, Pressable, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native'
 import { useState } from 'react'
 
 // Themed Components
@@ -12,6 +12,7 @@ import { Colors } from '../../constants/Colors';
 import ThemedButton from '../../components/ThemedButton';
 import ThemedTextInput from '../../components/ThemedTextInput';
 import { useUser } from '../../hooks/useUser';
+import ThemedLoader from '../../components/ThemedLoader';
 
 const Login = () => {
     const [email, setEmail] = useState('')
