@@ -3,13 +3,14 @@ import React from 'react'
 import { Slot, Stack } from 'expo-router'
 import { Colors } from '../constants/Colors' // Import the Colors object
 import {StatusBar} from 'expo-status-bar'
+import { UserProvider } from '../contexts/UserContext'
 
 const RootLayout = () => {
     const colorScheme = useColorScheme();
 
     const theme = Colors[colorScheme] ?? Colors.light; // Fallback to light theme if colorScheme is undefined
   return (
-    <View style={{flex: 1}}>
+    <UserProvider>
         <StatusBar value="auto" />
         <Stack screenOptions={
             {
@@ -25,9 +26,7 @@ const RootLayout = () => {
             <Stack.Screen name="index" options={{title: 'Shelfie'}} />
              {/* Define all screens here */}
         </Stack>
-        {/* <Slot /> renders the current page */}
-      {/* <Text>Footer</Text> */}
-    </View>
+    </UserProvider>
   )
 }
 

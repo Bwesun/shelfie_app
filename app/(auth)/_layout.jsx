@@ -1,8 +1,12 @@
 import { Stack } from 'expo-router'
 import React from 'react'
 import { StatusBar } from 'react-native'
+import { useUser } from '../../hooks/useUser'
 
 export default function AuthLayout() {
+
+  const {user} = useUser()
+  console.log('User: ', user)
   return (
     <>
         <StatusBar style="auto" />
