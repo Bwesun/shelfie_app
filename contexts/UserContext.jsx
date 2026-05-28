@@ -51,7 +51,7 @@ export function UserProvider({children}){
     }, [authChecked])
 
     return(
-        <UserContext.Provider value={{ user, login, register, logout }}>
+        <UserContext.Provider value={{ user, login, register, logout, authChecked }}>
             {children}
         </UserContext.Provider>
     )
